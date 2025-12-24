@@ -1,0 +1,20 @@
+name: dotnet-package-microsoft-netframework-referenceassemblies-net462
+ruletype: standard
+criticality: medium
+cloud: 100
+container: 100
+filetype: (config$)
+target: line
+type: regex
+defaultpattern: .*%s.*
+advice: Not Supported in .NetCore
+effort: 10
+readiness: 10
+category: package
+patterns:
+  - value: Microsoft.NETFramework.ReferenceAssemblies.net462
+tags:
+  - value: unsupported-netcore
+  - value: modernize
+profiles:
+  - value: netcore

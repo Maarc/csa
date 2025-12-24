@@ -1,0 +1,16 @@
+name: faas-meta
+ruletype: fire-once
+filetype: meta$
+target: file
+type: xpath
+advice: App should be started in the shortest time possible
+readiness: 2
+effort: 200
+category: boottime
+tags:
+  - value: faas
+patterns:
+  - value: /libraries[@count>13]
+#review
+profiles:
+- value: cloud-suitability

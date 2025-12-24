@@ -1,0 +1,24 @@
+name: java-redis-connection-string-user-password-properties
+ruletype: standard
+criticality: medium
+level: Info
+cloud: 100
+container: 100
+filetype: properties$
+target: line
+type: regex
+advice: Redis connection string, username and password are detected
+category: redis
+tags:
+  - value: redis
+  - value: cache
+effort: 0
+patterns:
+  - value: (^|\.|\s)redis\.(.*\.)?(url|host|nodes)
+  - value: (^|\.|\s)redis\.(.*\.)?(username|password)
+  - value: (^|\.|\s)jedis\.(url|host)
+  - value: (^|\.|\s)jedis\.(username|password)
+  - value: (^|\.|\s)lettuce\.(url|host)
+  - value: (^|\.|\s)lettuce\.(username|password)
+profiles:
+  - value: Azure Spring Apps

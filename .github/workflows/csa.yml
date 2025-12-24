@@ -1,0 +1,42 @@
+name: Go
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.22
+
+    - name: Install Dependencies
+      run: sudo apt update && sudo apt install -y nodejs npm go-bindata musl-tools gcc-mingw-w64 build-essential
+    
+    - name: Install goreleaser
+      run: sudo snap install goreleaser --classic
+      
+    - name: Build
+      run: ./build.sh
+    
+    - name: Upload CSA artifacts
+      uses: actions/upload-artifact@master
+      with:
+        name: csa-artifacts
+        path: csa-app/dist
+
+    - name: Upload CSA tests artifacts
+      uses: actions/upload-artifact@master
+      with:
+        name: csa-tests-artifacts
+        path: csa-app/test-exe

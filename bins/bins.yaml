@@ -1,0 +1,245 @@
+---
+#--- tags have to be all lowercase
+---
+name: TAS
+tags:
+  - name: tas
+    type: OR
+  - name: env-config
+    type: OR
+  - name: dependencies
+    type: OR
+  - name: spring
+    type: OR
+
+---
+name: MODERNIZE
+tags:
+  - name: modernize
+    type: OR
+  - name: weblogic
+    type: OR
+  - name: glassfish
+    type: OR
+  - name: jboss
+    type: OR
+  - name: websphere
+    type: OR
+
+---
+name: BATCH
+tags:
+  - name: batch
+    type: OR
+
+---
+name: CONTAINER
+tags:
+  - name: container
+    type: OR
+
+---
+name: DEPENDENCIES
+tags:
+  - name: dependencies
+    type: OR
+
+---
+name: SPRING
+tags:
+  - name: spring
+    type: OR
+  - name: spring-boot
+    type: OR
+
+---
+name: STATEFUL
+tags:
+  - name: stateful
+    type: OR
+  - name: spring
+    type: EXCLUDE
+
+---
+name: FRONTEND
+tags:
+  - name: frontend
+    type: OR
+
+---
+name: DESKTOP-APP
+tags:
+  - name: desktop-app
+    type: OR
+
+---
+name: CACHING
+tags:
+  - name: cache
+    type: OR
+  - name: memcache
+    type: OR
+  - name: hazelcast
+    type: OR
+  - name: apache-geode
+    type: OR
+  - name: spring-boot-cache
+    type: OR
+  - name: redis
+    type: OR
+  - name: ehcache
+    type: OR
+---
+name: FAAS
+tags:
+  - name: faas
+    type: OR
+
+---
+name: WEBSERVER
+tags:
+  - name: webserver
+    type: OR
+
+---
+name: DATABASE
+tags:
+  - name: database
+    type: OR
+  - name: ibm-db2
+    type: OR
+  - name: elasticsearch
+    type: OR
+  - name: graphql
+    type: OR
+  - name: mongodb
+    type: OR
+  - name: mssql
+    type: OR
+  - name: oracle
+    type: OR
+  - name: cassandra
+    type: OR
+  - name: hadoop
+    type: OR
+  - name: mysql
+    type: OR
+  - name: postgres
+    type: OR
+  - name: sqlite
+    type: OR
+  - name: peewee
+    type: OR
+  - name: ssis
+    type: OR
+  - name: sqlserver
+    type: OR
+  - name: mariadb
+    type: OR
+  - name: apache-ignite
+    type: OR
+  - name: couchbase
+    type: OR
+  - name: elasticsearch
+    type: OR
+  - name: rdbms
+    type: OR
+  - name: nosql
+    type: OR
+  - name: in-memory
+    type: OR
+---
+name: MESSAGING
+tags:
+  - name: messaging
+    type: OR
+  - name: activemq
+    type: OR
+  - name: apache-flume
+    type: OR
+  - name: apache-storm
+    type: OR
+  - name: ibm-mq
+    type: OR
+  - name: msmq
+    type: OR
+  - name: kafka
+    type: OR
+  - name: solace
+    type: OR
+  - name: masstransit
+    type: OR
+  - name: nservicebus
+    type: OR
+  - name: apache-pulsar
+    type: OR
+  - name: rocketmq
+    type: OR
+  - name: zeromq
+    type: OR
+  - name: nats
+    type: OR
+  - name: rabbitmq
+    type: OR
+  - name: apache-flink
+    type: OR
+  - name: jms
+    type: OR
+  - name: webspheremq
+    type: OR
+  - name: webspheremq
+    type: OR
+  - name: webspheremq
+    type: OR
+  - name: webspheremq
+    type: OR
+
+---
+name: SECURITY
+tags:
+  - name: security
+    type: OR
+
+---
+name: LOGGING
+tags:
+  - name: logging
+    type: OR
+
+---
+name: SCHEDULING
+tags:
+  - name: scheduler
+    type: OR
+
+---
+name: CONFIGURATION
+tags:
+  - name: configuration
+    type: OR
+
+---
+name: MONITORING
+tags:
+  - name: monitoring
+    type: OR
+
+---
+name: BUILD-SYSTEM
+tags:
+  - name: build-system
+    type: OR
+
+---
+name: VERSION
+tags:
+  - name: java-version
+    type: OR
+  - name: spring-boot-version
+    type: OR
+
+---
+name: DOCUMENTATION
+tags:
+  - name: documentation
+    type: OR

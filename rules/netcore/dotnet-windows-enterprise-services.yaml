@@ -1,0 +1,24 @@
+name: dotnet-windows-enterprise-services
+ruletype: standard
+criticality: medium
+cloud: 100
+container: 100
+filetype: (cs$|vb$)
+target: line
+type: regex
+defaultpattern: .*%s.*
+advice: Not Supported on .Net Core
+patterns:
+  - value: System.EnterpriseService
+readiness: 9
+effort: 10
+category: unsupported-netcore
+tags:
+  - value: com+
+  - value: api
+  - value: distributed-transaction
+  - value: unsupported-netcore
+  - value: modernize
+#- using System.EnterpriseServices;
+profiles:
+  - value: netcore

@@ -1,0 +1,36 @@
+name: java-rds-connection-string
+ruletype: standard
+criticality: medium
+level: Info
+cloud: 100
+container: 100
+filetype: (yaml$|yml$|json$|jsn$|properties$)
+target: contents
+type: yamlpath
+advice: relational database service connection string, username or password are detected. Migrate to Tanzu Postgres or MySQL
+category: relational database service
+tags:
+  - value: relational database service
+  - value: database
+  - value: rdbms
+effort: 0
+patterns:
+  - value: $..datasource.url
+  - value: $..datasource.username
+  - value: $..datasource.password
+  - value: $..datasource[*]["jdbc-url","url","u-r-l"]
+  - value: $..datasource[*]["username","user","password"]
+  - value: $..r2dbc["url"]
+  - value: $..r2dbc["username","password"]
+  - value: $..jdbc["url"]
+  - value: $..jdbc["username","password"]
+  - value: $..[?(@=~/(?i)jdbc:.+:.+/)]
+  - value: (^|\.|\s)datasource\.(.*\.)?(url|jdbc-url|u\-r\-l)
+  - value: (^|\.|\s)datasource\.(.*\.)?(username|user|password)
+  - value: (^|\.|\s)r2dbc\.url
+  - value: (^|\.|\s)r2dbc\.(username|password)
+  - value: (^|\.|\s)jdbc\.url
+  - value: (^|\.|\s)jdbc\.(username|password)
+  - value: =\s*jdbc:.+:.+
+profiles:
+  - value: Azure Spring Apps

@@ -1,0 +1,20 @@
+name: java-spring-boot-version-maven
+ruletype: standard
+criticality: medium
+cloud: 100
+container: 100
+filetype: xml$
+target: contents
+type: xpath
+level: Critical
+advice: Spring boot version is too low
+effort: 50
+category: version
+defaultpattern: //*[groupId="org.springframework.boot" and starts-with(version,"%s")]/version
+tags:
+  - value: spring-boot-version
+  - value: dependencies
+patterns:
+  - value: 1
+profiles:
+  - value: Azure Spring Apps

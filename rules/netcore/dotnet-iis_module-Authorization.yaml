@@ -1,0 +1,21 @@
+name: dotnet-iis_module-Authorization
+ruletype: standard
+criticality: medium
+cloud: 100
+container: 100
+filetype: config$
+target: file
+type: xpath
+advice: Windows and IIS server dependency. Not supported in .netCore targeting linux.
+patterns:
+  - value: /configuration/system.web/authorization
+readiness: 9
+effort: 10
+category: unsupported-iis-module
+tags:
+  - value: iis-module
+  - value: modernize
+#- <configuration><system.web><authorization
+# Mostly a challenge if moving to .NetCore
+profiles:
+  - value: netcore
