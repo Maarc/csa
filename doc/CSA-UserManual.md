@@ -3,6 +3,7 @@
 
 | Date         | Action                       | Author   |
 | ------------ | ---------------------------- | -------- |
+| Dec 24, 2025 | Retrieved and fixed version 4.1.19| Marc Zottner
 | Nov 15, 2023 | Update with new feature released in 4.1.10 | Tanzu Labs
 | Jul 26, 2023 | Update with new features released in 4.0    | Tanzu Labs
 | Feb 10, 2021 | Add call graphs to user manual with package descriptions| Tanzu Labs
@@ -41,7 +42,7 @@ The patterns are used to perform global scans of all application files, recursiv
 
 Download from here:
 
-[https://github.com/vmware-samples/cloud-suitability-analyzer/releases](https://github.com/vmware-samples/cloud-suitability-analyzer/releases)
+[https://github.com/maarc/csa/releases](https://github.com/maarc/csa/releases)
 
 There is no real installation process. It is just a matter of deciding on a home directory can copying the files in the `csa` distribution to that directory.
 

@@ -137,7 +137,7 @@
 </g>
 <g id="clust20" class="cluster">
 <title>cluster_github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/util</title>
-<g id="a_clust20"><a xlink:href="/?f=github.com/vmware-tanzu/cloud-suitability-analyzer/go/util" xlink:title="package: github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/util">
+<g id="a_clust20"><a xlink:href="/?f=github.com/maarc/csa/go/util" xlink:title="package: github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/util">
 <polygon fill="#ffffe0" stroke="#000000" stroke-width=".8" points="1295.9176,-8624.8 1295.9176,-9069.8 1541.2188,-9069.8 1541.2188,-8624.8 1295.9176,-8624.8"/>
 <text text-anchor="middle" x="1418.5682" y="-9051.4" font-family="Tahoma bold" font-size="16.00" fill="#000000">util</text>
 </a>
@@ -145,7 +145,7 @@
 </g>
 <g id="clust19" class="cluster">
 <title>cluster_github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/report</title>
-<g id="a_clust19"><a xlink:href="/?f=github.com/vmware-tanzu/cloud-suitability-analyzer/go/report" xlink:title="package: github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/report">
+<g id="a_clust19"><a xlink:href="/?f=github.com/maarc/csa/go/report" xlink:title="package: github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/report">
 <polygon fill="#ffffe0" stroke="#000000" stroke-width=".8" points="1295.4886,-7676.8 1295.4886,-7755.8 1541.6478,-7755.8 1541.6478,-7676.8 1295.4886,-7676.8"/>
 <text text-anchor="middle" x="1418.5682" y="-7737.4" font-family="Tahoma bold" font-size="16.00" fill="#000000">report</text>
 </a>
@@ -153,7 +153,7 @@
 </g>
 <g id="clust18" class="cluster">
 <title>cluster_github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/model</title>
-<g id="a_clust18"><a xlink:href="/?f=github.com/vmware-tanzu/cloud-suitability-analyzer/go/model" xlink:title="package: github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/model">
+<g id="a_clust18"><a xlink:href="/?f=github.com/maarc/csa/go/model" xlink:title="package: github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/model">
 <polygon fill="#ffffe0" stroke="#000000" stroke-width=".8" points="16,-7906.8 16,-8473.8 351.8466,-8473.8 351.8466,-7906.8 16,-7906.8"/>
 <text text-anchor="middle" x="183.9233" y="-8455.4" font-family="Tahoma bold" font-size="16.00" fill="#000000">model</text>
 </a>
@@ -161,7 +161,7 @@
 </g>
 <g id="clust17" class="cluster">
 <title>cluster_github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/db</title>
-<g id="a_clust17"><a xlink:href="/?f=github.com/vmware-tanzu/cloud-suitability-analyzer/go/db" xlink:title="package: github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/db">
+<g id="a_clust17"><a xlink:href="/?f=github.com/maarc/csa/go/db" xlink:title="package: github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/db">
 <polygon fill="#ffffe0" stroke="#000000" stroke-width=".8" points="1298.1298,-7763.8 1298.1298,-8208.8 1539.0066,-8208.8 1539.0066,-7763.8 1298.1298,-7763.8"/>
 <text text-anchor="middle" x="1418.5682" y="-8190.4" font-family="Tahoma bold" font-size="16.00" fill="#000000">db</text>
 </a>
@@ -169,7 +169,7 @@
 </g>
 <g id="clust16" class="cluster">
 <title>cluster_github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/backend/routes</title>
-<g id="a_clust16"><a xlink:href="/?f=github.com/vmware-tanzu/cloud-suitability-analyzer/go/backend/routes" xlink:title="package: github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/backend/routes">
+<g id="a_clust16"><a xlink:href="/?f=github.com/maarc/csa/go/backend/routes" xlink:title="package: github.com/vmware&#45;tanzu/cloud&#45;suitability&#45;analyzer/go/backend/routes">
 <polygon fill="#ffffe0" stroke="#000000" stroke-width=".8" points="2393.3281,-3722.8 2393.3281,-3862.8 2484.309,-3862.8 2484.309,-3722.8 2393.3281,-3722.8"/>
 <text text-anchor="middle" x="2438.8186" y="-3844.4" font-family="Tahoma bold" font-size="16.00" fill="#000000">routes</text>
 </a>

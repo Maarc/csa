@@ -45,7 +45,7 @@ if not goPath:
     sys.exit(1)
 
 # --- setup path to clone frontend repo
-devPath = f"{goPath}/src/github.com/vmware-tanzu/"
+devPath = f"{goPath}/src/github.com/maarc/"
 if not os.path.isdir(devPath):
     print(f"Creating dev path: {devPath}")
     os.makedirs(devPath)
