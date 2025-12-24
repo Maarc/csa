@@ -7,7 +7,7 @@ filetype: py$
 target: line
 type: regex
 defaultpattern: ^.*import(\s*|=")%s.*$
-advice: Check for cloud foundry support.
+advice: Check for Cloud Foundry support.
 # TODO
 effort: -10
 readiness: 10
