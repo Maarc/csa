@@ -44,7 +44,7 @@ Download from here:
 
 [https://github.com/maarc/csa/releases](https://github.com/maarc/csa/releases)
 
-There is no real installation process. It is just a matter of deciding on a home directory can copying the files in the `csa` distribution to that directory.
+There is no real installation process. It is just a matter of deciding on a home directory and copying the files in the `csa` distribution to that directory.
 
 ### Setting up environment
 
@@ -82,7 +82,7 @@ Add the following line to the file. Replace the <CSA directory> with the locatio
 
 Save the file and exit.
 
-Use the source command to force Linux to reload the .bashrc file which normally is read only when you log in each time.
+Use the source command to force OSX to reload the `.bash_profile` file which normally is read only when you log in each time.
 
 `source .bash_profile`
 
@@ -153,7 +153,7 @@ Set ulimit to 20000
 
 ### Getting help from `csa`
 
-`csa` has several major operating modes with thier own associated commands. You can see a list of the command by using `CSA help`
+`csa` has several major operating modes with their own associated commands. You can see a list of the command by using `csa help`
 
 | Command    | Description                                                              |
 | ---------- |--------------------------------------------------------------------------|
@@ -166,7 +166,7 @@ Set ulimit to 20000
 | recalculate | Recalculate scores for a prior run                                      |
 | ui  | Launch a local web server listening at localhost:3001                    |
 
-If you want help on any of these commands simple type CSA help and the command name, such as:
+If you want help on any of these commands simple type `csa help` and the command name, such as:
 
 `csa help rules`
 
@@ -192,13 +192,13 @@ This will produce a file "finding-report.csv"
 
 ### Using configuration files
 
-Configuratoin files give you full control over how `csa` processes your application portfolio.
+Configuration files give you full control over how `csa` processes your application portfolio.
 
 The table below describes the settings that are available:
 
 | Setting            | Description                                                  |
 | ------------------ | ------------------------------------------------------------ |
-| runName            | Specify a run number, `.` lets the number be set by `CSA`    |
+| runName            | Specify a run number, `.` lets the number be set by `csa`    |
 | applications       | A collection of application meta-data                        |
 | Name               | The name of the application, overrides directory name        |
 | Path               | Directory where your application exists                      |
@@ -230,7 +230,7 @@ The table below describes the settings that are available:
             "business-value": 0,
             "dir-exclude-regex": "^([.].*|target|classes|bin|test|node_modules|eclipse|out)$",
             "include-file-regex": ".*",
-            "exclude-file-regex": "^(.*[.](exe|png|tiff|tif|gif|jpg|jpeg|bmp|dmg|mpeg)|[.].*|csa-config[.](yaml|yml|json))$"
+            "exclude-file-regex": "^(.*[.](exe|png|tiff|tif|gif|jpg|jpeg|bmp|dmg|mpeg)|[.].*|CSA-config[.](yaml|yml|json))$"
         }
 
 
@@ -264,7 +264,7 @@ It's shaped like a bell and is sometimes called a bell-curve. Ever have a teache
 
 How do we reshape our curve? Since it is `log-normal`, really normal with a skew, we need a way to reshape it. This is very simple, we just take the base 10 logarithm of each number, in this case our total effort score.
 
-###Default Model
+### Default Model
 As discussed earlier, `csa's` scoring system is externalized into a `yaml` files. The model also includes a set of thresholds to suggest depositions. These thresholds are experimental for the moment.
 
 ```yaml
@@ -277,7 +277,7 @@ ranges:
     #--- Valid types include:
     #    sloc:  Software Lines of Code
     #    raw:   Raw score
-    #.   bv:    Business value of app
+    #    bv:    Business value of app
     start: "0"
     end: int.max
     #--- describe a continuum of range bins
@@ -375,7 +375,7 @@ ranges:
 
 An important design requirement for `csa` was the ability to change rules in the field, without the need to recompile the executable. This requirement is driven by the realization that many customer may have in-house libraries that have `wrapper` classes and functions to simplify the use of other frameworks. As such, these wrapper classes may hide critical patterns. With this capability, those internal libraries can be scanned first and then the rules may be augmented to look for additional patterns. The following process details the steps required to do this.
 
-1. Export the rules currently contained inside the `CSA` executable
+1. Export the rules currently contained inside the `csa` executable
 
    `csa rules export -–output-dir=./rules`
 
@@ -446,8 +446,8 @@ What is a Rule? A rule is in simplest terms a description of something that you 
 | Attribute      | Type                     | Description                                                                                                                                                                                                    | Required (y/n) | Default                                               | Overridable (y/n) |
 | -------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- | ----------------------------------------------------- | ----------------- |
 | Name           | string                   | The name of the rule. Can be meaningful or not but must be unique! And must match the name of the yaml file.                                                                                                   | Y              |                                                       | N                 |
-| FileType       | string                   | The file extension the rule will target. I.E. `java` for `.java` files! Value should not include the dot (period). This can also be a regular expression. I.E. `xm[li]` would match both `xml` and `xmi` files | N              | Rule will apply to all files if no value is specified | N      
-| Container/Cloud           | int | Factor to apply to effort score. This allows efforts to be scaled up or down. This is a percentage. 100, the default has no effect. 150 will raise the effort by 50%, 50 will lower the score by half.
+| FileType       | string                   | The file extension the rule will target. I.E. `java` for `.java` files! Value should not include the dot (period). This can also be a regular expression. I.E. `xm[li]` would match both `xml` and `xmi` files | N              | Rule will apply to all files if no value is specified | N                 |
+| Container/Cloud | int                     | Factor to apply to effort score. This allows efforts to be scaled up or down. This is a percentage. 100, the default has no effect. 150 will raise the effort by 50%, 50 will lower the score by half.         | N              | 100                                                   | N                 |
 | Target         | enum                     | This is the target of the rule. Valid values: File,Line. File = rule will apply to filenames only. Line = rule will be applied against every line of content within the file.                                  | Y              |                                                       | N                 |
 | Type           | enum                     | This specifies the type or behavior of the rule. Valid values: regex, simple-text, simple-text-ci, starts-with, starts-with-ci, ends-with, ends-with-ci, contains, contains-ci                                 | Y              |                                                       | Y                 |
 | DefaultPattern | string                   | Pattern with a placeholder (%s) for substitution of "Pattern" values. I.E. "[ .]%s[ (]". This does not only apply to Regex rules but can also be used for others like a StartsWith such as 'org.json.%s'       | N              |                                                       | Y (pattern)       |
@@ -520,7 +520,7 @@ patterns:
   - value: TransactionManagement
   - value: TransactionAttribute
   - value: PostActivate
-  - value: PreTASsivate
+  - value: PrePassivate
 ```
 
 ##### File Target
@@ -558,7 +558,7 @@ patterns:
 
 So, now you understand rules. What rules come by default? Or what do the current set of rules that `csa` is using look like? Let's export them!
 
-Run the `csa` rules command with the export sub-command. By default rules will export to the default output-dir. You can override where they will go with the --output-dir flag or the --rules-dir flag. By default they will be exported as yaml with each rule in a separate file. If you prefer json or only working with a single file there are command flags to control this behavior. run ``csa`help rules export` for details.
+Run the `csa` rules command with the export sub-command. By default rules will export to the default output-dir. You can override where they will go with the --output-dir flag or the --rules-dir flag. By default they will be exported as yaml with each rule in a separate file. If you prefer json or only working with a single file there are command flags to control this behavior. run `csa help rules export` for details.
 
 ```
 usage: csa rules export [<flags>] [<name>]
@@ -591,7 +591,7 @@ import rule(s) into the database. By default rules will be added/updated rather 
 ```bash
 ==> csa rules import --rules-dir=csa-reports/rules
 DBEngine: sqlite Name: csa.db Version: 3.23.1
-Successfully imported [47] rule(s) found @[csa`csa`-reports/rules]
+Successfully imported [47] rule(s) found @[csa-reports/rules]
 ```
 
 > **Note**: If importing more than one rule for file ==> If file format is yaml follow the standard yaml multi-document format of separating documents with `---`. If file format is json then just put the rule (object) in the file as a distinct object. Json really doesn't support more than one top level object in a file but that's ok! :). For example of how to create a multi-doc file run the export with the flag to create a single file and review!
@@ -742,7 +742,7 @@ On MacOs:
 
 ### Bucketing of applications by tags
 
-All rules in `csa` have any number of `tags` assocatied with them. A `tag` just assoiciates a concept with the rule, such a `jni` or `corba`. At a higher level, we can think of a group of tags can further identify an architecture archetype or a bucket of similar applications. `csa` uses a single `yaml` file (`bins/bins.yaml`) to describe the archetypes as seen in the excerpt below:
+All rules in `csa` have any number of `tags` associated with them. A `tag` just associates a concept with the rule, such a `jni` or `corba`. At a higher level, we can think of a group of tags can further identify an architecture archetype or a bucket of similar applications. `csa` uses a single `yaml` file (`bins/bins.yaml`) to describe the archetypes as seen in the excerpt below:
 
 ```yaml
 name: TKG
@@ -788,7 +788,7 @@ tags:
 
 ### Overview
 
-The `cas ui` command launches a browser-based visual explorer. You'll see `csa` write out some status information then the last line `Using Http FileSystem`. This is your indication that `csa ui` is waiting for you to directory your browser to `localhost:3001`
+The `csa ui` command launches a browser-based visual explorer. You'll see `csa` write out some status information then the last line `Using Http FileSystem`. This is your indication that `csa ui` is waiting for you to directory your browser to `localhost:3001`
 
 ```bash
 Csa: 1.63.0-rev.2 DBEngine: sqlite-3.25.2	DBName: csa.db
@@ -824,7 +824,7 @@ A series of infomation boxes divide the page showing high level statistics.
 
 | Box Title | Meaning                                               |
 | --------- | ----------------------------------------------------- |
-| APPS      | Total nunber of applications scanned                  |
+| APPS      | Total number of applications scanned                  |
 | LOCS      | Total lines of code found in portfolio                |
 | FILES     | Total number of files in portfolio                    |
 | FINDINGS  | Total number of findings that were triggered by rules |
@@ -947,7 +947,7 @@ If you're writing rules for `csa` this tab is very helpful to know how the rules
 
 ## CSA Structure and Operation
 
-CSA is a complex application for selevaral reasons. It contains a parallel rules processing engine, a web server, and an embedded set of yaml based rules. The first time it is run, it creates it's own *SQLite* database, `csa.db`. It's CLI syntax is extensive. To better understand it, a comprehensive call graph has been produced and may be found in the `doc/csa-callgraphs` directory. These call graphs were created with a `Go` base utility called [go-callvis](https://github.com/ofabry/go-callvis). The tools directs your browser to a locally hosted web-server. 
+CSA is a complex application for several reasons. It contains a parallel rules processing engine, a web server, and an embedded set of yaml based rules. The first time it is run, it creates it's own *SQLite* database, `csa.db`. It's CLI syntax is extensive. To better understand it, a comprehensive call graph has been produced and may be found in the `doc/csa-callgraphs` directory. These call graphs were created with a `Go` base utility called [go-callvis](https://github.com/ofabry/go-callvis). The tools directs your browser to a locally hosted web-server. 
 
 To install:
 ```bash

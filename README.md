@@ -13,7 +13,7 @@
 
 # Quick Start
 
-`csa` has pre-built binaries for Windows, OSX, and Linux. The quickest way to get starting using `csa` is to download the [latest release](https://github.com/maarc/csa/releases/latest). Included with the release is the latest [user manual](doc/CSA-UserManual.md) in pdf format. A sample portfolio of applications is also included.
+`csa` has pre-built binaries for Windows, OSX, and Linux. The quickest way to get started using `csa` is to download the [latest release](https://github.com/maarc/csa/releases/latest). Included with the release is the latest [user manual](doc/CSA-UserManual.md) in pdf format. A sample portfolio of applications is also included.
 
 No install is required. Simply download the version that matches your operating system and move the executable to the directory of your choice. It's best to put the directory in your path to simplify running `csa`. Everything you need to use `csa` is inside this single executable.
 
@@ -29,13 +29,13 @@ For more detailed help instructions:
 csa --help-long
 ```
 
-To simplify usage, `csa` has a default mode of `analyze`, since that is it most frequently used. Typically, you point `csa` to a directory that contains sub-directories, each containing one application. `csa` considers this directory of sub-directories a portfilio. To tell `csa` to process the directory as a portfolio of applications, we use the`-p` flag on the command-line
+To simplify usage, `csa` has a default mode of `analyze`, since that is it most frequently used. Typically, you point `csa` to a directory that contains sub-directories, each containing one application. `csa` considers this directory of sub-directories a portfolio. To tell `csa` to process the directory as a portfolio of applications, we use the `-p` flag on the command-line
 
 ```bash
 csa -p <directory of application code>
 ```
 
-`csa` will process all the subdirectories as applications and write the results to the console. Look in the directory where `csa` was copied to and you'll see a file, `csa.db`. This is a SQLite database full of it findings.
+`csa` will process all the subdirectories as applications and write the results to the console. Look in the directory where `csa` was copied to and you'll see a file, `csa.db`. This is a SQLite database full of its findings.
 
 To see the results of the analysis, you'll need to call `csa` one more time and launch the browser-based user interface:
 
