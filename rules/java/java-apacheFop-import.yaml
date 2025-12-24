@@ -9,7 +9,7 @@ type: regex
 defaultpattern: "[ .]%s[ .({]"
 effort: 5
 readiness: 10
-advice: Usage requires configuration remdiation
+advice: Usage requires configuration remediation
 category: thirdParty
 tags:
   - value: apache-fop
