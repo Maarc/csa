@@ -1,8 +1,6 @@
 module csa-app
 
-go 1.22
-
-toolchain go1.22.4
+go 1.23.0
 
 require (
 	github.com/Knetic/govaluate v3.0.0+incompatible
@@ -82,10 +80,10 @@ require (
 	github.com/willf/bitset v1.1.11 // indirect
 	go.etcd.io/bbolt v1.3.11 // indirect
 	golang.org/x/arch v0.11.0 // indirect
-	golang.org/x/crypto v0.31.0 // indirect
-	golang.org/x/net v0.33.0 // indirect
-	golang.org/x/sys v0.28.0 // indirect
-	golang.org/x/text v0.21.0 // indirect
+	golang.org/x/crypto v0.36.0 // indirect
+	golang.org/x/net v0.38.0 // indirect
+	golang.org/x/sys v0.31.0 // indirect
+	golang.org/x/text v0.23.0 // indirect
 	google.golang.org/protobuf v1.35.1 // indirect
 	gopkg.in/toqueteos/substring.v1 v1.0.2 // indirect
 )
